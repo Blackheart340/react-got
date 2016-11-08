@@ -2,7 +2,7 @@
   "name": "react-got",
   "version": "1.0.0",
   "description": "react data delivery component",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "ava --verbose",
     "test-watch": "ava --verbose --watch",
