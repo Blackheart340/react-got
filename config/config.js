@@ -3,5 +3,5 @@ module.exports = {
     BUILD_PATH: 'dist',
     BUILD_PATH_UMD: 'umd',
     LIB_NAME: 'ReactData',
-    LIB_FILENAME: 'react-data',
+    LIB_FILENAME: 'react-got',
 };

@@ -1,10 +1,11 @@
 {
-  "name": "react-data",
+  "name": "react-got",
   "version": "1.0.0",
   "description": "react data delivery component",
   "main": "lib/index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "ava --verbose",
+    "test-watch": "ava --verbose --watch",
     "build-package": "npm run test && npm run build-all",
     "build-all": "npm run clean && npm run build-dist && npm run build-umd && npm run build-umd-min",
     "build-dist": "npm run clean && ./node_modules/.bin/babel lib --out-dir dist",
@@ -16,36 +17,62 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/auru/react-data"
+    "url": "github.com/blackheart340/react-got"
   },
   "keywords": [
     "react",
     "data",
+    "fetch",
     "ajax"
   ],
+  "ava": {
+    "files": [
+      "test/*spec.js"
+    ],
+    "source": [
+      "**/*.{js,jsx}"
+    ],
+    "concurrency": 4,
+    "failFast": false,
+    "tap": false,
+    "require": [
+      "babel-register",
+      "babel-polyfill",
+      "ignore-styles",
+      "./test/setup.js"
+    ],
+    "babel": "inherit"
+  },
   "author": "blackheart340",
   "license": "ISC",
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
-      "babel-cli": "^6.16.0",
-      "babel-core": "^6.17.0",
-      "babel-eslint": "^7.0.0",
-      "babel-loader": "^6.2.5",
-      "babel-polyfill": "^6.16.0",
-      "babel-preset-es2015": "^6.16.0",
-      "babel-preset-react": "^6.16.0",
-      "babel-preset-stage-0": "^6.16.0",
-      "babel-register": "^6.16.3",
-      "eslint": "^3.7.1",
-      "eslint-plugin-ava": "^3.1.0",
-      "eslint-plugin-react": "6.4.1",
-      "immutable": "^3.8.1",
-      "jsdom": "^9.6.0",
-      "pre-commit": "^1.1.3",
-      "react": "^15.3.2",
-      "rimraf": "^2.5.4",
-      "webpack": "^1.13.2"
+    "ava": "^0.16.0",
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-eslint": "^7.0.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-register": "^6.18.0",
+    "browser-env": "^2.0.15",
+    "enzyme": "^2.5.1",
+    "eslint": "^3.7.1",
+    "eslint-plugin-ava": "^3.1.0",
+    "eslint-plugin-react": "6.4.1",
+    "ignore-styles": "^5.0.1",
+    "immutable": "^3.8.1",
+    "jsdom": "^9.6.0",
+    "pre-commit": "^1.1.3",
+    "react": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.6",
+    "webpack": "^1.13.2"
   }
 }
